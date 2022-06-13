@@ -1577,7 +1577,10 @@ void Adafruit_PN532::readdata(uint8_t *buff, uint8_t n) {
     PN532DEBUGPRINT.print(F("Reading: "));
 #endif
     // Start read (n+1 to take into account leading 0x01 with I2C)
-    WIRE.requestFrom((uint8_t)PN532_I2C_ADDRESS, (uint8_t)(n + 2));
+    while(WIRE.available()) {
+      i2c_recv();
+    }
+    WIRE.requestFrom((uint8_t)PN532_I2C_ADDRESS, (uint8_t)(n + 1));
     // Discard the leading 0x01
     i2c_recv();
     for (uint8_t i = 0; i < n; i++) {
