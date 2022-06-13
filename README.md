@@ -29,6 +29,7 @@ ATtiny85 @ 16MHz   |             |             |     X       |
 ATtiny85 @ 8MHz    |             |             |     X       | 
 Intel Curie @ 32MHz |             |             |     X       | 
 STM32F2            |             |             |     X       | 
+RP2040             |      X      |             |             | I2C Works
 
   * ATmega328 @ 16MHz : Arduino UNO, Adafruit Pro Trinket 5V, Adafruit Metro 328, Adafruit Metro Mini
   * ATmega328 @ 12MHz : Adafruit Pro Trinket 3V
